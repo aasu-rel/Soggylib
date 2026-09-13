@@ -37,6 +37,7 @@ constexpr uintptr_t CONFIG_USE_HIGH_VIEW_ANGLE = 2582;  // 0xA16
 constexpr uintptr_t CONFIG_USAGE_SHARING       = 2579;  // 0xA13 (org)
 
 // constexpr uintptr_t OFF_ZoomSubtractor = 0xB4E894; unused
+constexpr uintptr_t OFF_BoardLayout = 0xAA09E0;
 constexpr uintptr_t OFF_BoardZoom2 = 0xAA0C40;
 
 constexpr uintptr_t BOARD_280 = 1120;   // 0x460 
