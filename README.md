@@ -7,7 +7,7 @@ Yes, another one. No, this one's actually good.
 
 # Features
 
-- **Full lawn (wide view)** toggle in Settings — see more lawn. (add widescreen fix yourself tho)
+- **Full lawn (wide view)** toggle in Settings - see more lawn. (add widescreen fix yourself tho)
 - Native hook helpers for `libPVZ2.so`
 - Settings UI injection (EA won't let me add tab via softcode)
 - Persistence helpers (your settings actually save now, wow)
@@ -49,8 +49,9 @@ Got a different version? Cool. Update `offsets.h` yourself. Good luck.
 # Credits
 
 - **And64InlineHook** — Rprop
-- **[Blazey's Example Mod](https://github.com/BlazeyLol/PVZ2ExpansionMod)** — Original repo for 9.6.1 libbing
-- **[Plants vs Zombie discord (not offical one)](https://discord.gg/pvz)** — Awesome community
+- **[Blazey's Example Mod](https://github.com/BlazeyLol/PVZ2ExpansionMod)** - Original repo for 9.6.1 libbing
+- **[Plants vs Zombie discord (not offical one)](https://discord.gg/pvz)** - Awesome community
+- **[Original Full lawn toggle](https://github.com/CongJian833/PvZ2-LawnZoomTab)** - Original repo for full lawn from 9.8.1
 
 ---
 
