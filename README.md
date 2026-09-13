@@ -7,7 +7,7 @@ Yes, another one. No, this one's actually good.
 
 # Features
 
-- **Full lawn (wide view)** toggle in Settings — see more lawn.
+- **Full lawn (wide view)** toggle in Settings — see more lawn. (add widescreen fix yourself tho)
 - Native hook helpers for `libPVZ2.so`
 - Settings UI injection (EA won't let me add tab via softcode)
 - Persistence helpers (your settings actually save now, wow)
