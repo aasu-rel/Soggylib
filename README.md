@@ -1,6 +1,6 @@
 # Soggylib
 
-A shared library for **Plants vs. Zombies 2** modding.
+A shared library for **Plants vs. Zombies 2** modding. (64-bit ONLY!!!!!)
 Yes, another one. No, this one's actually good.
 
 ---
