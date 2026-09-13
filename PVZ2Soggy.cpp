@@ -138,10 +138,10 @@ static uintptr_t hkCreateTab(uintptr_t page, uint32_t id, uintptr_t title,
     return oCreateTab(page, id, title, iconN, iconS);
 }
 
-static uintptr_t hkCreateCB(uintptr_t page, uint32_t id, uintptr_t label,
-                            char init, int p5) {
+static uintptr_t hkCreateCB(uintptr_t page, uint32_t id, uintptr_t label, char init, int p5) {
+    if (id == 48) init = 0; // disable slib full lawn since it's buggy
     uintptr_t cb = oCreateCB(page, id, label, init, p5);
-    if (id == 48 && cb) g_hiddenCB = cb;
+    if (id == 48 && cb) g_hiddenCB = cb; // hide slib full lawn, same reason
     return cb;
 }
 
