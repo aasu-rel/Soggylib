@@ -1,0 +1,13 @@
+build/
+.cache/
+output/
+*.so
+*.o
+*.apk
+*.jks
+keystore.properties
+local.properties
+.idea/
+.vs/
+CMakeCache.txt
+CMakeFiles/
