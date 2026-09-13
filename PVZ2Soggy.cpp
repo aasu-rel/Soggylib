@@ -61,6 +61,21 @@ static void setHighView(bool v) {
     }
 }
 
+typedef long (*BoardLayout_t)(uintptr_t board);
+static BoardLayout_t oBoardLayout = nullptr;
+
+static long hkBoardLayout(uintptr_t board) {
+    long ret = oBoardLayout(board);
+    if (getHighView()) {
+        int b283 = *(int*)(board + BOARD_283);
+        int b286 = *(int*)(board + BOARD_286);
+        *(int*)(board + BOARD_270) = -b283;      // fix left edge
+        *(int*)(board + BOARD_284) = -b283;
+        *(int*)(board + BOARD_285) = (b283 + b286) / 2;
+    }
+    return ret;
+}
+
 typedef long (*BoardZoom2_t)(uintptr_t board); // board zoom
 static BoardZoom2_t oBoardZoom2 = nullptr;
 
@@ -154,6 +169,7 @@ static void ApplyHooks() {
     PVZ2HookFunction(OFF_SettingsCreate,    (void*)hkCreateTab,  (void**)&oCreateTab);
     PVZ2HookFunction(OFF_SettingsDispatch,  (void*)hkDispatch,   (void**)&oDispatch);
     PVZ2HookFunction(OFF_CheckboxCreate,    (void*)hkCreateCB,   (void**)&oCreateCB);
+    PVZ2HookFunction(OFF_BoardLayout, (void*)hkBoardLayout, (void**)&oBoardLayout);
     PVZ2HookFunction(OFF_BoardZoom2,        (void*)hkBoardZoom2, (void**)&oBoardZoom2);
     LOGI("Soggylib hookde");
 }
