@@ -49,7 +49,6 @@ Got a different version? Cool. Update `offsets.h` yourself. Good luck.
 # Credits
 
 - **And64InlineHook** — Rprop
-- **Memutils** — Blazey (THE GOATTT)
 - **[Blazey's Example Mod](https://github.com/BlazeyLol/PVZ2ExpansionMod)** — Original repo for 9.6.1 libbing
 - **[Plants vs Zombie discord (not offical one)](https://discord.gg/pvz)** — Awesome community
 
