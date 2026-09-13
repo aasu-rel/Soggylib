@@ -31,10 +31,16 @@ Output: `libSoggy.so`
 
 # Usage
 
-1. Yeet `libSoggylib.so` into your APK's `lib/arm64-v8a/` folder (make sure to delete armeabi-v7a)
-2. `System.loadLibrary("Soggylib");`
-3. Launch the game
-4. Profit
+1. Yeet `libSoggy.so` into your APK's `lib/arm64-v8a/` folder (make sure to delete armeabi-v7a)
+2. Paste this code in `smali_classes2\com\popcap\PvZ2\PvZ2GameActivity`
+   ```
+   .line 57
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+
+    const-string v0, "Soggy"
+   ```
+4. Launch the game
+5. Figure out the feature
 
 ---
 
@@ -42,7 +48,7 @@ Output: `libSoggy.so`
 
 PvZ2 **9.6.1** (ARM64).
 
-Got a different version? Cool. Update `offsets.h` yourself. Good luck.
+Got a different version? Cool. Update `offsets.h` yourself. good luck
 
 ---
 
