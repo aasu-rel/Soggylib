@@ -71,7 +71,8 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - Multiple targets per event
 - Example:
   ```json
-  "m_lineParent": ["egypt_10", "egypt_11"]```
+  "m_lineParent": ["egypt_10", "egypt_11"]
+  ```
 
 ---
 
