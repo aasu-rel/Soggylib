@@ -58,21 +58,17 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 
 ### Sandbox mode
 - Similar to PvZ2G's sandbox
-- Unlock all plants / levels / sun-bonus
-- Approach: search IDA for existing "sandbox" / "cheat" / "devmode" strings first
-- If nothing exists, needs custom UI + hooks
+- Unlock all plants
+- Able to spawn any unlocked zombies
 
 ### Glove (maybe)
-- [ ] Confirm what this is — shovel replacement? item slot?
-- [ ] Find the asset loader / button render path
+- Render the button ui (grab from shovel probably)
+- Write function (grab plant and move around)
 
 ### Custom worldmap lines
 - Add `"m_lineParent"` per event in `worldmap.json` (softcode)
 - Line drawn from event → `m_lineParent` target, independent of `m_parentEvent`
-- Needs:
-  - [ ] Parser update to read the new field
-  - [ ] Worldmap renderer hook to draw the extra lines
-  - [ ] Editor-side save support
+- Example uses: 
 
 ---
 
