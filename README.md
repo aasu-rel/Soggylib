@@ -3,6 +3,8 @@
 A shared library for **Plants vs. Zombies 2** modding. (64-bit ONLY!!!!!)
 Yes, another one. No, this one's actually good.
 
+This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped on.
+
 ---
 
 # Features
