@@ -69,7 +69,7 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - Add `"m_lineParent"` per event in `worldmap.json` (softcode)
 - Line drawn from event → `m_lineParent` target
 - Multiple lines with separate parents (example)
-  
+  [worldmaplines1](https://raw.githubusercontent.com/aasu-rel/Soggylib/refs/heads/main/READMEassets/worldmaplines1.png)
 - Example:
   ```json
   "m_lineParent": ["egypt_10", "egypt_11"]
