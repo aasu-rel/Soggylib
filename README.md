@@ -68,7 +68,8 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 ### Custom worldmap lines
 - Add `"m_lineParent"` per event in `worldmap.json` (softcode)
 - Line drawn from event → `m_lineParent` target
-- Multiple targets per event
+- Multiple lines with separate parents (example)
+  
 - Example:
   ```json
   "m_lineParent": ["egypt_10", "egypt_11"]
