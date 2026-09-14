@@ -18,7 +18,7 @@ This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped o
 
 # Build
 
-Uses **CMake**. (Surprise.)
+Uses **CMake**. (Surprise hah.)
 
 Just run `build.bat`. If it explodes, you're probably missing:
 
@@ -51,6 +51,28 @@ Output: `libSoggy.so`
 PvZ2 **9.6.1** (ARM64).
 
 Got a different version? Cool. Update `offsets.h` yourself. good luck
+
+---
+
+# To-do list
+
+### Sandbox mode
+- Similar to PvZ2G's sandbox
+- Unlock all plants / levels / sun-bonus
+- Approach: search IDA for existing "sandbox" / "cheat" / "devmode" strings first
+- If nothing exists, needs custom UI + hooks
+
+### Glove (maybe)
+- [ ] Confirm what this is — shovel replacement? item slot?
+- [ ] Find the asset loader / button render path
+
+### Custom worldmap lines
+- Add `"m_lineParent"` per event in `worldmap.json` (softcode)
+- Line drawn from event → `m_lineParent` target, independent of `m_parentEvent`
+- Needs:
+  - [ ] Parser update to read the new field
+  - [ ] Worldmap renderer hook to draw the extra lines
+  - [ ] Editor-side save support
 
 ---
 
