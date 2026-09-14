@@ -62,13 +62,16 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - Able to spawn any unlocked zombies
 
 ### Glove (maybe)
-- Render the button ui (grab from shovel probably)
+- Render the button UI (grab from shovel probably)
 - Write function (grab plant and move around)
 
 ### Custom worldmap lines
 - Add `"m_lineParent"` per event in `worldmap.json` (softcode)
-- Line drawn from event → `m_lineParent` target, independent of `m_parentEvent`
-- Example uses: 
+- Line drawn from event → `m_lineParent` target
+- Multiple targets per event
+- Example:
+  ```json
+  "m_lineParent": ["egypt_10", "egypt_11"]```
 
 ---
 
