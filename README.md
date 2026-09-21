@@ -65,16 +65,17 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - Render the button UI (grab from shovel probably)
 - Write function (grab plant and move around)
 
-### Custom worldmap lines
-- Add `"m_HidePath"` per event in `worldmap.json` (softcode)
-- Line drawn from event → `m_HidePath` target
-- Multiple lines with separate parents (example)
+### Hide worldmap lines
+- Add `"m_hidepath"` per event in `worldmap.json` (softcode)
+- Line drawn from event → `m_hidepath` target
+- Use for cutting off path (I couldn't make path parent XD)
+(example)
 
 
   ![worldmaplines1](https://raw.githubusercontent.com/aasu-rel/Soggylib/refs/heads/main/READMEassets/worldmaplines1.png)
 - Example:
   ```json
-  "m_lineParent": ["egypt_10", "egypt_11"]
+  "m_hidepath": "egypt_10"
   ```
 
 ---
