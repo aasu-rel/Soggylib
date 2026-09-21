@@ -66,8 +66,8 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - Write function (grab plant and move around)
 
 ### Custom worldmap lines
-- Add `"m_lineParent"` per event in `worldmap.json` (softcode)
-- Line drawn from event → `m_lineParent` target
+- Add `"m_HidePath"` per event in `worldmap.json` (softcode)
+- Line drawn from event → `m_HidePath` target
 - Multiple lines with separate parents (example)
 
 
