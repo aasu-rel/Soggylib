@@ -10,9 +10,12 @@ This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped o
 # Features
 
 - **Full lawn (wide view)** toggle in Settings - see more lawn. (add widescreen fix yourself tho)
-- Native hook helpers for `libPVZ2.so`
-- Custom tab in settings (Might be useful in future)
-- Persistence helpers (your settings actually save now, wow)
+- Custom tab in settings (Might be useful in future) and it's customizable!
+- Hide worldmap path (this is hell for me) - overwrite `m_unlockedNarrationID` (because I can't register new field) to hide the path (m_parentEvent)
+```json
+"m_parentEvent": "egypt_10",
+"m_unlockedNarrationID": "egypt_10",
+```
 
 ---
 
@@ -64,19 +67,6 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 ### Glove (maybe)
 - Render the button UI (grab from shovel probably)
 - Write function (grab plant and move around)
-
-### Hide worldmap lines
-- Add `"m_hidepath"` per event in `worldmap.json` (softcode)
-- Line drawn from event → `m_hidepath` target
-- Use for cutting off path (I couldn't make path parent XD)
-(example)
-
-
-  ![worldmaplines1](https://raw.githubusercontent.com/aasu-rel/Soggylib/refs/heads/main/READMEassets/worldmaplines1.png)
-- Example:
-  ```json
-  "m_hidepath": "egypt_10"
-  ```
 
 ---
 
