@@ -13,33 +13,6 @@
 static std::atomic<bool> g_highView{true};
 static std::atomic<bool> g_loaded{false};
 
-static inline const char* evtName  (uintptr_t e) { return strAt(e, 0x20); }
-static inline const char* evtParent(uintptr_t e) { return strAt(e, 0x80); }
-
-static inline const char* evtHide(uintptr_t e) { return strAt(e, 0xD0); } // m_unlockedNarrationID
-
-typedef uintptr_t (*CreateTab)(uintptr_t, uint32_t, uintptr_t, uintptr_t, uintptr_t);
-typedef long      (*AddWidget)(uintptr_t, uintptr_t, uint8_t, float);
-typedef int       (*Dispatch)(uintptr_t, uint32_t, char);
-typedef uintptr_t (*CreateCB)(uintptr_t, uint32_t, uintptr_t, char, int);
-typedef void      (*StrCreate)(uintptr_t, const wchar_t*, uint32_t);
-
-typedef long (*BoardZoom2_t)(uintptr_t board); // board zoom
-static BoardZoom2_t oBoardZoom2 = nullptr;
-
-typedef long (*DrawPaths_t)(uintptr_t worldMap, uintptr_t renderCtx);
-static DrawPaths_t oDrawPaths = nullptr;
-
-static CreateTab oCreateTab;
-static AddWidget oAddWidget;
-static Dispatch  oDispatch;
-static CreateCB  oCreateCB;
-
-static bool      g_injected;
-static uintptr_t g_hiddenCB;
-
-static constexpr uint32_t kViewAngleId = 30;
-
 struct GStr { uint64_t flag, size, heap; };   // libc++ std::string, 24B SSO
 
 static void makeKey(GStr& s, const char* key) {
@@ -103,11 +76,30 @@ static long hkBoardLayout(uintptr_t board) {
     return ret;
 }
 
+typedef long (*BoardZoom2_t)(uintptr_t board); // board zoom
+static BoardZoom2_t oBoardZoom2 = nullptr;
+
 static long hkBoardZoom2(uintptr_t board) {
     long ret = oBoardZoom2(board);
     if (getHighView()) *(float*)(board + BOARD_280) = 1.0f;
     return ret;
 }
+
+typedef uintptr_t (*CreateTab)(uintptr_t, uint32_t, uintptr_t, uintptr_t, uintptr_t);
+typedef long      (*AddWidget)(uintptr_t, uintptr_t, uint8_t, float);
+typedef int       (*Dispatch)(uintptr_t, uint32_t, char);
+typedef uintptr_t (*CreateCB)(uintptr_t, uint32_t, uintptr_t, char, int);
+typedef void      (*StrCreate)(uintptr_t, const wchar_t*, uint32_t);
+
+static CreateTab oCreateTab;
+static AddWidget oAddWidget;
+static Dispatch  oDispatch;
+static CreateCB  oCreateCB;
+
+static bool      g_injected;
+static uintptr_t g_hiddenCB;
+
+static constexpr uint32_t kViewAngleId = 30;
 
 static bool isSkipped(uint32_t id) {
     switch (id) {
@@ -174,6 +166,13 @@ static inline const char* strAt(uintptr_t evt, uintptr_t off) {
     return (fl & 1) ? *(const char**)(evt + off + 0x10)
                     : (const char*)(evt + off + 1);
 }
+static inline const char* evtName  (uintptr_t e) { return strAt(e, 0x20); }
+static inline const char* evtParent(uintptr_t e) { return strAt(e, 0x80); }
+
+static inline const char* evtHide(uintptr_t e) { return strAt(e, 0xD0); } // m_unlockedNarrationID
+
+typedef long (*DrawPaths_t)(uintptr_t worldMap, uintptr_t renderCtx);
+static DrawPaths_t oDrawPaths = nullptr;
 
 static inline bool endpoint_hides(uintptr_t e, uintptr_t other) {
     const char* hide = evtHide(e);
