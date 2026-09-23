@@ -27,16 +27,16 @@ constexpr uintptr_t SETTINGS_PAGE_DIRTY        = 292;   // 0x124
 // ID map - do not reuse
 // Tabs created by sub_A0EC6C: 3,6,7,8,9,10,12,15,18,21,24,26
 // Sliders: 4,5
-// Checkboxes (via sub_A145AC): 13,14,16,17,19,20,27,29
+// Checkboxes (sub_A145AC): 13,14,16,17,19,20,27,29
 
 constexpr uint32_t SETTINGS_VIEW_ANGLE_ID = 30;
 constexpr uint32_t CHECKBOX_VIEW_HIGH_ID  = 31;
 constexpr uint32_t CHECKBOX_VIEW_LOW_ID   = 32;
 
-constexpr uintptr_t CONFIG_USE_HIGH_VIEW_ANGLE = 2582;  // 0xA16
-constexpr uintptr_t CONFIG_USAGE_SHARING       = 2579;  // 0xA13 (org)
+constexpr uintptr_t CONFIG_USE_HIGH_VIEW_ANGLE = 2582;
+constexpr uintptr_t CONFIG_USAGE_SHARING       = 2579;
 
-// constexpr uintptr_t OFF_ZoomSubtractor = 0xB4E894; unused
+// constexpr uintptr_t OFF_ZoomSubtractor = 0xB4E894;
 constexpr uintptr_t OFF_BoardLayout = 0xAA09E0;
 constexpr uintptr_t OFF_BoardZoom2 = 0xAA0C40;
 
@@ -54,6 +54,8 @@ constexpr uintptr_t OFF_IconResourceS    = 0x2576AC8;
 constexpr uintptr_t SETTINGS_PAGE_CONTAINER = 240;
 
 constexpr uintptr_t OFF_SettingsStringCreate = 0x5B5B84;
+
+constexpr uintptr_t OFF_DrawPaths   = 0x7A7590;
 
 #endif
 
