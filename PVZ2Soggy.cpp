@@ -13,6 +13,33 @@
 static std::atomic<bool> g_highView{true};
 static std::atomic<bool> g_loaded{false};
 
+static inline const char* evtName  (uintptr_t e) { return strAt(e, 0x20); }
+static inline const char* evtParent(uintptr_t e) { return strAt(e, 0x80); }
+
+static inline const char* evtHide(uintptr_t e) { return strAt(e, 0xD0); } // m_unlockedNarrationID
+
+typedef uintptr_t (*CreateTab)(uintptr_t, uint32_t, uintptr_t, uintptr_t, uintptr_t);
+typedef long      (*AddWidget)(uintptr_t, uintptr_t, uint8_t, float);
+typedef int       (*Dispatch)(uintptr_t, uint32_t, char);
+typedef uintptr_t (*CreateCB)(uintptr_t, uint32_t, uintptr_t, char, int);
+typedef void      (*StrCreate)(uintptr_t, const wchar_t*, uint32_t);
+
+typedef long (*BoardZoom2_t)(uintptr_t board); // board zoom
+static BoardZoom2_t oBoardZoom2 = nullptr;
+
+typedef long (*DrawPaths_t)(uintptr_t worldMap, uintptr_t renderCtx);
+static DrawPaths_t oDrawPaths = nullptr;
+
+static CreateTab oCreateTab;
+static AddWidget oAddWidget;
+static Dispatch  oDispatch;
+static CreateCB  oCreateCB;
+
+static bool      g_injected;
+static uintptr_t g_hiddenCB;
+
+static constexpr uint32_t kViewAngleId = 30;
+
 struct GStr { uint64_t flag, size, heap; };   // libc++ std::string, 24B SSO
 
 static void makeKey(GStr& s, const char* key) {
@@ -76,30 +103,11 @@ static long hkBoardLayout(uintptr_t board) {
     return ret;
 }
 
-typedef long (*BoardZoom2_t)(uintptr_t board); // board zoom
-static BoardZoom2_t oBoardZoom2 = nullptr;
-
 static long hkBoardZoom2(uintptr_t board) {
     long ret = oBoardZoom2(board);
     if (getHighView()) *(float*)(board + BOARD_280) = 1.0f;
     return ret;
 }
-
-typedef uintptr_t (*CreateTab)(uintptr_t, uint32_t, uintptr_t, uintptr_t, uintptr_t);
-typedef long      (*AddWidget)(uintptr_t, uintptr_t, uint8_t, float);
-typedef int       (*Dispatch)(uintptr_t, uint32_t, char);
-typedef uintptr_t (*CreateCB)(uintptr_t, uint32_t, uintptr_t, char, int);
-typedef void      (*StrCreate)(uintptr_t, const wchar_t*, uint32_t);
-
-static CreateTab oCreateTab;
-static AddWidget oAddWidget;
-static Dispatch  oDispatch;
-static CreateCB  oCreateCB;
-
-static bool      g_injected;
-static uintptr_t g_hiddenCB;
-
-static constexpr uint32_t kViewAngleId = 30;
 
 static bool isSkipped(uint32_t id) {
     switch (id) {
@@ -160,6 +168,42 @@ static int hkDispatch(uintptr_t page, uint32_t id, char checked) {
     return oDispatch ? oDispatch(page, id, checked) : 0;
 }
 
+static inline const char* strAt(uintptr_t evt, uintptr_t off) {
+    uint64_t fl = *(uint64_t*)(evt + off);
+    if (!fl) return "";
+    return (fl & 1) ? *(const char**)(evt + off + 0x10)
+                    : (const char*)(evt + off + 1);
+}
+
+static inline bool endpoint_hides(uintptr_t e, uintptr_t other) {
+    const char* hide = evtHide(e);
+    if (!hide[0]) return false;
+    const char* parent = evtParent(e);
+    if (!parent[0] || strcmp(hide, parent) != 0) return false;
+    return strcmp(evtName(other), parent) == 0;
+}
+
+static long hkDrawPaths(uintptr_t worldMap, uintptr_t renderCtx) {
+    uintptr_t gBegin = *(uintptr_t*)(worldMap + 0x368);
+    uintptr_t gEnd   = *(uintptr_t*)(worldMap + 0x370);
+
+    for (uintptr_t g = gBegin; g < gEnd; g += 0x20) {
+        uintptr_t srcEvt = *(uintptr_t*)(g + 0x18);
+        uintptr_t pBegin = *(uintptr_t*)(g + 0x00);
+        uintptr_t pEnd   = *(uintptr_t*)(g + 0x08);
+        uintptr_t write  = pBegin;
+
+        for (uintptr_t p = pBegin; p < pEnd; p += 0x20) {
+            uintptr_t dstEvt = *(uintptr_t*)(p + 0x10);
+            if (endpoint_hides(srcEvt, dstEvt) || endpoint_hides(dstEvt, srcEvt)) continue;
+            if (write != p) memcpy((void*)write, (void*)p, 0x20);
+            write += 0x20;
+        }
+        *(uintptr_t*)(g + 0x08) = write;
+    }
+    return oDrawPaths(worldMap, renderCtx);
+}
+
 static void ApplyHooks() {
     uintptr_t base = 0;
     while ((base = getLibraryAddress("libPVZ2.so")) == 0) usleep(100000);
@@ -169,8 +213,9 @@ static void ApplyHooks() {
     PVZ2HookFunction(OFF_SettingsCreate,    (void*)hkCreateTab,  (void**)&oCreateTab);
     PVZ2HookFunction(OFF_SettingsDispatch,  (void*)hkDispatch,   (void**)&oDispatch);
     PVZ2HookFunction(OFF_CheckboxCreate,    (void*)hkCreateCB,   (void**)&oCreateCB);
-    PVZ2HookFunction(OFF_BoardLayout, (void*)hkBoardLayout, (void**)&oBoardLayout);
     PVZ2HookFunction(OFF_BoardZoom2,        (void*)hkBoardZoom2, (void**)&oBoardZoom2);
+    PVZ2HookFunction(OFF_BoardLayout,       (void*)hkBoardLayout,(void**)&oBoardLayout);
+    PVZ2HookFunction(OFF_DrawPaths,         (void*)hkDrawPaths,  (void**)&oDrawPaths);
     LOGI("Soggylib hookde");
 }
 
