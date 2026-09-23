@@ -76,6 +76,7 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - **[Blazey's Example Mod](https://github.com/BlazeyLol/PVZ2ExpansionMod)** - Original repo for 9.6.1 libbing
 - **[Plants vs Zombie discord (not offical one)](https://discord.gg/pvz)** - Awesome community
 - **[Original Full lawn tab](https://github.com/CongJian833/PvZ2-LawnZoomTab)** - Original repo for full lawn from 9.8.1 [video](https://www.bilibili.com/video/BV1iNbX6DEy7/)
+- **[Renojackson's Awesome lib](https://github.com/RenoJson/ARM64_example_injection_for_PvZ2/)** - Bunches of cool stuff for ARM64 lib (9.6.1) 
 
 ---
 
