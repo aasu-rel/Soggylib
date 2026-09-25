@@ -72,7 +72,7 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 
 # Credits
 
-- **And64InlineHook** — Rprop
+- **[And64InlineHook](https://github.com/rprop/and64inlinehook)** - Rprop
 - **[Blazey's Example Mod](https://github.com/BlazeyLol/PVZ2ExpansionMod)** - Original repo for 9.6.1 libbing
 - **[Plants vs Zombie discord (not offical one)](https://discord.gg/pvz)** - Awesome community
 - **[Original Full lawn tab](https://github.com/CongJian833/PvZ2-LawnZoomTab)** - Original repo for full lawn from 9.8.1 [video](https://www.bilibili.com/video/BV1iNbX6DEy7/)
