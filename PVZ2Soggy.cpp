@@ -117,7 +117,6 @@ static constexpr uint32_t kViewAngleId = 30;
 
 static uintptr_t hkCreateTab(uintptr_t page, uint32_t id, uintptr_t title, uintptr_t iconN, uintptr_t iconS)
 {
-    // New page → reset injection state
     if (page != g_lastSettingsPage) {
         g_lastSettingsPage = page;
         g_hiddenCB         = 0;
