@@ -16,6 +16,7 @@ This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped o
 "m_parentEvent": "egypt_10",
 "m_unlockedNarrationID": "egypt_10",
 ```
+- Build date in build version
 
 ---
 
