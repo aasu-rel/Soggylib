@@ -57,6 +57,8 @@ constexpr uintptr_t OFF_SettingsStringCreate = 0x5B5B84;
 
 constexpr uintptr_t OFF_DrawPaths   = 0x7A7590;
 
+constexpr uintptr_t OFF_AddSettingLabel = 0xA14C34;
+
 #endif
 
 #endif
