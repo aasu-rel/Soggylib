@@ -54,10 +54,12 @@ adb logcat -s Soggy:* crash_dump:*
 ```
 
 Common emulator ports:
+```
 MuMu : 7555
 BlueStacks 5 : 5555
 LDPlayer : 5555
-Android Studio AVD : 5554r
+Android Studio AVD : 5554
+```
 
 ## Clear log and follow
 
