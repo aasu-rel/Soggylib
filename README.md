@@ -109,10 +109,9 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 # To-do list
 
 ### Sandbox mode
-- Similar to PvZ2G's sandbox
-- Unlock all plants
-- Able to spawn any zombies
-- Debug menu
+- Drag and drop zombies via seed packets
+- Pages plant seed packets (same for zombie)
+- Sandbox configurations (Infinite suns, PFs, etc)
 
 **Editor note:** this may end up as a separate repository containing the required resources (level JSONs, module registrations) and install instructions.
 
