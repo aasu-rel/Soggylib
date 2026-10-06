@@ -10,7 +10,7 @@ set "OUTPUT_DIR=output"
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
 echo [1/3] Configuring...
-cmake -B build -G "Ninja" ^
+cmake -Wno-author -B build -G "Ninja" ^
   -DCMAKE_TOOLCHAIN_FILE="%NDK_PATH%/build/cmake/android.toolchain.cmake" ^
   -DANDROID_ABI=%ABI% ^
   -DANDROID_PLATFORM=android-%MIN_SDK% ^
