@@ -9,14 +9,13 @@ This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped o
 
 # Features
 
-- **Full lawn (wide view)** toggle in Settings - see more lawn. (add widescreen fix yourself tho)
-- Custom tab in settings (Might be useful in future) and it's customizable!
+- **Full lawn (wide view)** toggle in Settings - Change view angle. (add widescreen fix yourself tho)
 - Hide worldmap path (this is hell for me) - overwrite `m_unlockedNarrationID` (because I can't register new field) to hide the path (m_parentEvent)
 ```json
 "m_parentEvent": "egypt_10",
 "m_unlockedNarrationID": "egypt_10",
 ```
-- Build date in build version
+- Build date in build version tab in setting
 
 ---
 
@@ -24,14 +23,61 @@ This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped o
 
 Uses **CMake**. (Surprise hah.)
 
-Just run `build.bat`. If it explodes, you're probably missing:
+Just run `build.bat`. Edit `NDK_PATH` at the top if your NDK isn't at `C:/Android/ndk`.
+
+If it explodes, you're probably missing:
 
 - Android NDK **r25+**
 - CMake **3.18+**
 - Ninja
 - Patience
 
-Output: `libSoggy.so`
+Output: `output/libSoggy.so`
+
+---
+
+# Logging with ADB
+
+Requires [ADB](https://developer.android.com/tools/adb) installed and on your `PATH`.
+
+## USB device
+
+```bash
+adb logcat -s Soggy:* crash_dump:*
+```
+
+## Network emulator (MuMu, BlueStacks, LDPlayer, physical over Wi-Fi)
+
+```bash
+adb connect <emulator-ip>:<port>
+adb logcat -s Soggy:* crash_dump:*
+```
+
+Common emulator ports:
+MuMu : 7555
+BlueStacks 5 : 5555
+LDPlayer : 5555
+Android Studio AVD : 5554r
+
+## Clear log and follow
+
+```bash
+adb logcat -c && adb logcat -s Soggy:* crash_dump:*
+```
+
+`-c` clears the buffer, `-s` silences all other tags.
+
+## Filter by multiple tags
+
+```bash
+adb logcat Soggy:V Soggy2:V *:S
+```
+
+## Save to file
+
+```bash
+adb logcat -s Soggy:* crash_dump:* > soggy.log
+```
 
 ---
 
@@ -63,11 +109,10 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 ### Sandbox mode
 - Similar to PvZ2G's sandbox
 - Unlock all plants
-- Able to spawn any unlocked zombies
+- Able to spawn any zombies
+- Debug menu
 
-### Glove (maybe)
-- Render the button UI (grab from shovel probably)
-- Write function (grab plant and move around)
+**Editor note:** this may end up as a separate repository containing the required resources (level JSONs, module registrations) and install instructions.
 
 ---
 
