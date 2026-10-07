@@ -61,19 +61,13 @@ LDPlayer : 5555
 Android Studio AVD : 5554
 ```
 
-## Clear log and follow
+## Clear log and follow (Recommended)
 
 ```bash
 adb logcat -c && adb logcat -s Soggy:* crash_dump:*
 ```
 
 `-c` clears the buffer, `-s` silences all other tags.
-
-## Filter by multiple tags
-
-```bash
-adb logcat Soggy:V Soggy2:V *:S
-```
 
 ## Save to file
 
