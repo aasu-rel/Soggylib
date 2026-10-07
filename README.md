@@ -105,7 +105,7 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 ### Sandbox mode
 - Drag and drop zombies via seed packets
 - Pages plant seed packets (same for zombie)
-- Sandbox configurations (Infinite suns, PFs, etc)
+- Sandbox panel (Infinite suns, PFs, kill all zombies, etc)
 
 **Editor note:** this may end up as a separate repository containing the required resources (level JSONs, module registrations) and install instructions.
 
