@@ -3,7 +3,7 @@
 A shared library for **Plants vs. Zombies 2** modding. (64-bit ONLY!!!!!)
 Yes, another one. No, this one's actually good.
 
-This library is used in **Plants vs Zombies 2 Fractured**, A mod that I helped on.
+This library required SnowieLib (Use for spawning zombies for sandbox mode) some some offsets might changes, so make sure to install slib :)
 
 ---
 
@@ -126,3 +126,8 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 MIT. Do whatever, just don't blame me.
 
 PvZ2 belongs to PopCap / EA. Not affiliated, not endorsed, not sued (yet). No game assets included — go play the game.
+
+---
+
+# My mod
+Hey glad you made it this far, I guess wanna say that I'm currently working on **PvZ2 Soggy** which include **everything** in this lib (obviously) and bunch of cool contents, If you interested on being tester, feel free to send me a DM (aasu_rel). farewell modders.
