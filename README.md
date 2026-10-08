@@ -123,9 +123,8 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 
 # License
 
-CC0. Do whatever, just don't blame me.
-
-If you use this lib without crediting me, well I don't really care but credit me please. :c
+CC0 1.0. Do whatever, don't blame me.
+Crediting isn't required, but it's appreciated. :c
 
 PvZ2 belongs to PopCap / EA. Not affiliated, not endorsed, not sued (yet).
 
