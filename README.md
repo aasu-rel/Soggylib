@@ -125,6 +125,8 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 
 MIT. Do whatever, just don't blame me.
 
+If you use this lib without crediting me, well I don't really care but credit me please. :c
+
 PvZ2 belongs to PopCap / EA. Not affiliated, not endorsed, not sued (yet). No game assets included — go play the game.
 
 ---
