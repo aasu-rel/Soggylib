@@ -123,7 +123,7 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 
 # License
 
-MIT. Do whatever, just don't blame me.
+CC0. Do whatever, just don't blame me.
 
 If you use this lib without crediting me, well I don't really care but credit me please. :c
 
