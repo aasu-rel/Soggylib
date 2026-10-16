@@ -7,6 +7,14 @@ This library required SnowieLib (Use for spawning zombies for sandbox mode) some
 
 ---
 
+# Target
+
+PvZ2 **9.6.1** (ARM64).
+
+Got a different version? Cool. Update `offsets.h` yourself. good luck
+
+---
+
 # Features
 
 - **Full lawn (wide view)** toggle in Settings - Change view angle. (add widescreen fix yourself tho)
@@ -19,9 +27,30 @@ This library required SnowieLib (Use for spawning zombies for sandbox mode) some
 
 ---
 
+## IMPORTANT!!!!
+As of v1.0.5 Soggylib require you to install specific files in your obb (no it's not logger) to make features working properly
+See [Installations/README.md](Installations/README.md) for more informations.
+
+---
+
+# Usage
+
+1. Yeet `libSoggy.so` into your APK's `lib/arm64-v8a/` folder (make sure to delete armeabi-v7a)
+2. Paste this code in `smali_classes2\com\popcap\PvZ2\PvZ2GameActivity`
+   ```
+   .line 57
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+
+    const-string v0, "Soggy"
+   ```
+4. Launch the game
+5. Figure out the feature
+
+---
+
 # Build
 
-Uses **CMake**. (Surprise hah.)
+## Uses **CMake**. (Surprise hah.)
 
 Just run `build.bat`. Edit `NDK_PATH` at the top if your NDK isn't at `C:/Android/ndk`.
 
@@ -77,37 +106,12 @@ adb logcat -s Soggy:* crash_dump:* > soggy.log
 
 ---
 
-# Usage
-
-1. Yeet `libSoggy.so` into your APK's `lib/arm64-v8a/` folder (make sure to delete armeabi-v7a)
-2. Paste this code in `smali_classes2\com\popcap\PvZ2\PvZ2GameActivity`
-   ```
-   .line 57
-    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-
-    const-string v0, "Soggy"
-   ```
-4. Launch the game
-5. Figure out the feature
-
----
-
-# Target
-
-PvZ2 **9.6.1** (ARM64).
-
-Got a different version? Cool. Update `offsets.h` yourself. good luck
-
----
-
 # To-do list
 
-### Sandbox mode
-- Drag and drop zombies via seed packets
-- Pages plant seed packets (same for zombie)
-- Sandbox panel (Infinite suns, PFs, kill all zombies, etc)
+## Sandbox
 
-**Editor note:** this may end up as a separate repository containing the required resources (level JSONs, module registrations) and install instructions.
+- [ ] Auto load Resource group
+- [ ] Shovel everything
 
 ---
 
@@ -117,7 +121,7 @@ Got a different version? Cool. Update `offsets.h` yourself. good luck
 - **[Blazey's Example Mod](https://github.com/BlazeyLol/PVZ2ExpansionMod)** - Original repo for 9.6.1 libbing
 - **[Plants vs Zombie discord (not offical one)](https://discord.gg/pvz)** - Awesome community
 - **[Original Full lawn tab](https://github.com/CongJian833/PvZ2-LawnZoomTab)** - Original repo for full lawn from 9.8.1 [video](https://www.bilibili.com/video/BV1iNbX6DEy7/)
-- **[Renojackson's Awesome lib](https://github.com/RenoJson/ARM64_example_injection_for_PvZ2/)** - Bunches of cool stuff for ARM64 lib (9.6.1) 
+- **[Renojackson's Awesome lib](https://github.com/RenoJson/ARM64_example_injection_for_PvZ2/)** - Bunches of cool stuff for ARM64 lib
 
 ---
 
