@@ -1,8 +1,8 @@
 # Sandbox Installation guide 101
 ## How 2 install sandbox mode
 
-1. Firstly first, Encode [SANDBOX.json](https://github.com/aasu-rel/Soggy/blob/main/Installations/Required%20files/SANDBOX.json) to rton and move it to packages/LEVELS
-2. Copy the code in [ZOMBIETYPES](https://github.com/aasu-rel/Soggy/blob/main/Installations/Required%20files/ZOMBIETYPES.json) and [ZOMBIEPROPERTIES](https://github.com/aasu-rel/Soggy/blob/main/Installations/Required%20files/ZOMBIEPROPERTIES.json) then place in your obb
+1. Firstly first, Encode [SANDBOX.json](https://github.com/aasu-rel/Soggylib/blob/main/Installations/Required%20files/SANDBOX.json) to rton and move it to packages/LEVELS
+2. Copy the code in [ZOMBIETYPES](https://github.com/aasu-rel/Soggylib/blob/main/Installations/Required%20files/ZOMBIETYPES.json) and [ZOMBIEPROPERTIES](https://github.com/aasu-rel/Soggy/blob/main/Installations/Required%20files/ZOMBIEPROPERTIES.json) then place in your obb
 3. put ZombieBlank.scg in packets (and edit obb's data.json)
 
 Don't forget to add the way to enter sandbox level such as in worldmap
@@ -125,7 +125,7 @@ change only aliases, typename, resourcegroups and popanim, DON'T CHANGE FRAMEWOR
                 ],
 ```
 
-I know you won't do this manually so check python tool in [Required files](https://github.com/aasu-rel/Soggy/blob/main/Installations/Required%20files)
+I know you won't do this manually so check python tool in [Required files](https://github.com/aasu-rel/Soggylib/blob/main/Installations/Required%20files/loadres.py)
 
 boom done
 
