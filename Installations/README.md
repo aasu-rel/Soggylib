@@ -120,7 +120,7 @@ change only aliases, typename, resourcegroups and popanim, DON'T CHANGE FRAMEWOR
 "ResourceGroupNames": [
                     "PlantSunflower",
                     "PlantPeashooter",
-					...
+					"etc",
 					"ZombieTutorialGroup"
                 ],
 ```
