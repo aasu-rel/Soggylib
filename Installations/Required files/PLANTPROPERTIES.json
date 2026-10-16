@@ -1,0 +1,75 @@
+{
+			"objclass": "DummyZombieProps",
+			"aliases": [
+				"DummyZDefault"
+			],
+			"objdata": {
+				"CanLiveOnWaves": true,
+				"HidePlantingEffects": true,
+				"RestrictPlantingToGridArea": {
+					"mX": 5,
+					"mY": 0,
+					"mWidth": 4,
+					"mHeight": 5
+				},
+				"Cost": -666,
+				"Hitpoints": 1.000000,
+				"PacketCooldown": 0,
+				"MultiPlantLayer": "power",
+				"PlantGridType": "ground",
+				"ArtCenter": {
+					"x": 97,
+					"y": 119
+				},
+				"Actions": [
+					{
+						"Type": "projectile",
+						"Projectile": "RTID(DummyZombieProjectileDefault@ProjectileTypes)",
+						"ProjectileLaunchSound": "",
+						"InitialMinCooldownTime": 0,
+						"CooldownTimeMin": 0.100000,
+						"CooldownTimeMax": 0.100000,
+						"SpawnOffset": {
+							"x": 35.000000,
+							"y": -32.000000
+						}
+					}
+				],
+				"BonusTumblersChance": 0,
+				"BonusTumblersAmount": 0,
+				"BonusTumblersTimeBetween": 0,
+				"TumbleStunChance": 0,
+				"TumbleStunDuration": 0,
+				"KnockbackChance": 0,
+				"KnockbackDistance": 0,
+				"PlantStats": [
+					{
+						"Type": "recharge",
+						"Value": "recharge4"
+					},
+					{
+						"Type": "damage",
+						"Value": "damage1"
+					}
+				],
+				"ScaledProps": [],
+				"ZenGardenSproutWeight": 0,
+				"ZenGardenBoostCost": 12,
+				"ZenGardenDurationOverrideSeconds": 18000,
+				"IsConsumable": true,
+				"IsInstant": true,
+				"AnimRigProps": "RTID(DummyZAnimRigProps@PlantProperties)",
+				"SuggestionAlts": []
+			}
+		},
+		{
+			"objclass": "PlantAnimRigPropertySheet",
+			"aliases": [
+				"DummyZAnimRigProps"
+			],
+			"objdata": {
+				"AttackAnimations": [
+					"attack"
+				]
+			}
+		},

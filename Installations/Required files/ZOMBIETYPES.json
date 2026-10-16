@@ -1,0 +1,20 @@
+{
+			"#comment": "####### Make level doesn't end #######",
+			"objclass": "ZombieType",
+			"aliases": [
+				"blank"
+			],
+			"objdata": {
+				"TypeName": "blank",
+				"ZombieClass": "ZombieBasic",
+				"Properties": "RTID(Blank@ZombieProperties)",
+				"ResourceGroups": [
+					"ZombieBlank"
+				],
+				"AudioGroups": [],
+				"AnimRigClass": "ZombieAnimRig_Tutorial",
+				"PopAnim": "POPANIM_ZOMBIE_ZOMBIE_BLANK",
+				"HomeWorld": "modern",
+				"IsBasicZombie": true
+			}
+		},

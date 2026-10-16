@@ -1,0 +1,124 @@
+{
+    "#comment": "Sandbox mode requires Soggylib to be installed",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "StartingSun": 250,
+                "Description": "(Sandbox mode)\nSummon zombies and test your plants. (first ever??)",
+                "AddBonusStartingSun": false,
+                "SuppressPlantfoodPurchase": true,
+                "LevelNumber": 666,
+                "DisableSaveGame": true,
+                "ForceToWorldMap": true,
+                "LevelPowerupSet": "LevelPowerupsUnlimited",
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "Loot": "RTID(NoLoot@LevelModules)",
+                "ResourceGroupNames": [
+                    "PlantSunflower",
+                    "PlantPeashooter"
+                ],
+                "Modules": [
+                    "RTID(ModernMowers@LevelModules)",
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(CooldownMultiplier@CurrentLevel)",
+                    "RTID(MowerUses@CurrentLevel)",
+                    "RTID(Escalation@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)"
+                ],
+                "Name": "Soggy - Sandbox mode",
+                "StageModule": "RTID(ModernStage@LevelModules)",
+                "MusicType": "MiniGame_A"
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PresetPlantList": [],
+                "SelectionMethod": "preset"
+            }
+        },
+        {
+            "aliases": [
+                "CooldownMultiplier"
+            ],
+            "objclass": "PlantCooldownModifierProperties",
+            "objdata": {
+                "CooldownMultiplier": 1
+            }
+        },
+        {
+            "aliases": [
+                "MowerUses"
+            ],
+            "objclass": "LevelMutatorMowerSpawnProps",
+            "objdata": {
+                "SpawnOverride": "infinite"
+            }
+        },
+        {
+            "aliases": [
+                "Escalation"
+            ],
+            "objclass": "LevelEscalationModuleProperties",
+            "objdata": {
+                "FlagCount": 1,
+                "WavesPerFlag": 1,
+                "PlantfoodToSpawnCount": 0,
+                "StartingPoints": 0,
+                "PointIncrementPerWave": 0,
+                "WaveManagerProps": "RTID(WaveManager@CurrentLevel)",
+                "ZombiePool": [
+                    "RTID(blank@ZombieTypes)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {}
+        },
+        {
+            "aliases": [
+                "WaveManager"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 1,
+                "WaveCount": 1,
+                "SuppressFlagZombie": true,
+                "ZombieCountdownFirstWaveSecs": 2147483646,
+                "ZombieCountdownFirstWaveConveyorSecs": 2147483646,
+                "Waves": [
+                    [
+                        "RTID(Wave1@.)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(blank@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

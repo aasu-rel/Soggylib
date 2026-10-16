@@ -1,0 +1,72 @@
+{
+			"aliases": [
+				"Blank"
+			],
+			"objclass": "ZombiePropertySheet",
+			"objdata": {
+				"ArtCenter": {
+					"x": 9000,
+					"y": 12500
+				},
+				"AttackRect": {
+					"mHeight": 1,
+					"mWidth": 1,
+					"mX": 150000000,
+					"mY": 0
+				},
+				"CanTriggerZombieWin": false,
+				"CanSpawnPlantFood": false,
+				"CanBeFlicked": false,
+				"CanSurrender": false,
+				"Cost": 0,
+				"EatDPS": 1,
+				"GroundTrackName": "ground_swatch",
+				"HitRect": {
+					"mHeight": 95,
+					"mWidth": 32,
+					"mX": 1000000,
+					"mY": 10
+				},
+				"Hitpoints": 1,
+				"ScaledProps": [
+					{
+						"Arg1": 1.300000,
+						"Arg2": 0.050000,
+						"Formula": "standard",
+						"Key": "Hitpoints"
+					},
+					{
+						"Arg1": 1.300000,
+						"Arg2": 0.050000,
+						"Formula": "standard",
+						"Key": "EatDPS"
+					},
+					{
+						"Formula": "constant",
+						"Key": "Speed"
+					},
+					{
+						"Formula": "constant",
+						"Key": "WavePointCost"
+					}
+				],
+				"ShadowOffset": {
+					"x": 5000,
+					"y": 0,
+					"z": 1.400000
+				},
+				"Speed": 0.100000,
+				"WavePointCost": 0,
+				"Weight": 0,
+				"ZombieStats": [
+					{
+						"Type": "toughness",
+						"Value": "toughness1"
+					},
+					{
+						"Type": "speed",
+						"Value": "speed2"
+					}
+				]
+			}
+		},

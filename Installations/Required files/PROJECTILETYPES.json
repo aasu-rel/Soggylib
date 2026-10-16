@@ -1,0 +1,151 @@
+{
+			"objclass": "DummyZombieProjectileProps",
+			"aliases": [
+				"DummyZombieProjectileDefault"
+			],
+			"objdata": {
+				"ClassName": "DummyZombieProjectile",
+				"BaseDamage": 0,
+				"SplashDamage": 0,
+				"KnockbackChance": 0,
+				"KnockbackTime": 0,
+				"KnockbackDistance": 0,
+				"KnockbackHeight": 0,
+				"BounceOutwardTendency": 0,
+				"BounceAngleInDegrees": 0,
+				"TumbleStunChance": 0,
+				"TumbleStunDuration": 0,
+				"HasShadow": false,
+				"TossChance": [
+					0,
+					0,
+					0,
+					0
+				],
+				"TossChanceBuckets": {
+					"Buckets": [
+						{
+							"ListType": "includelist",
+							"List": [
+								"ZombieImp",
+								"ZombieFutureImp",
+								"ZombieIceAgeDodo",
+								"ZombieModernSuperfanImp",
+								"ZombieRomanImp",
+								"ZombieBasic",
+								"ZombiePirateCaptain",
+								"ZombieRomanHealer",
+								"ZombieExplorer",
+								"ZombieProspector",
+								"ZombieCamel",
+								"ZombieCrystalSkull",
+								"ZombieEightiesPunk",
+								"ZombieEightiesGlitter",
+								"ZombieBeachSurfer",
+								"ZombieTombRaiser",
+								"ZombieModernNewspaper",
+								"ZombieRa",
+								"ZombieSwashbuckler",
+								"ZombiePoncho",
+								"ZombieChickenFarmer",
+								"ZombieWeaselHoarder",
+								"ZombieDarkWizard",
+								"ZombieBeachSnorkel",
+								"ZombieIceAgeHunter",
+								"ZombieLostCityBasic",
+								"ZombieLostCityJane",
+								"ZombieLostCityRelicHunter",
+								"ZombieEightiesBasic",
+								"ZombieEighties8BitBasic",
+								"ZombieEightiesMC",
+								"ZombieEightiesBreakDancer",
+								"ZombieEightiesBoombox",
+								"ZombieDinoBasic",
+								"ZombieRomanShield",
+								"ZombieRomanTopShield",
+								"ZombieModernBalloon"
+							]
+						},
+						{
+							"ListType": "includelist",
+							"List": [
+								"ZombieModernAllStar",
+								"ZombieImpPorter",
+								"ZombieFutureProtector",
+								"ZombiePirateBarrelPusher",
+								"ZombieIceAgeTroglobite",
+								"ZombieEightiesArcade",
+								"ZombieBeachOctopus",
+								"ZombiePharaoh",
+								"ZombieDinoBully",
+								"ZombieDinoBullyVeteran",
+								"ZombieRomanMedusa"
+							]
+						},
+						{
+							"ListType": "includelist",
+							"List": [
+								"ZombieMechFootball",
+								"ZombieBull",
+								"ZombieBullVeteran",
+								"ZombiePiano",
+								"ZombieMech",
+								"ZombieMechDisco",
+								"ZombieBigHeadNewspaper",
+								"ZombieBigHeadAllStar",
+								"ZombieBigHeadSuperfan",
+								"ZombieBigHeadBasic",
+								"ZombieBigHeadImp",
+								"ZombieBigHeadBarrelRoller"
+							]
+						}
+					]
+				},
+				"CollisionFlags": [
+					"none"
+				],
+				"DamageFlags": [
+					"none"
+				],
+				"InitialVelocity": [
+					{
+						"Min": 350.000000,
+						"Max": 380.000000
+					},
+					{
+						"Min": 0.000000,
+						"Max": 0.000000
+					},
+					{
+						"Min": 0.000000,
+						"Max": 0.000000
+					}
+				],
+				"InitialAcceleration": [
+					{
+						"Min": 0.000000,
+						"Max": 0.000000
+					},
+					{
+						"Min": 0.000000,
+						"Max": 0.000000
+					},
+					{
+						"Min": 0.000000,
+						"Max": 0.000000
+					}
+				],
+				"InitialScale": {
+					"Min": 1.000000,
+					"Max": 1.000000
+				},
+				"DiesOnImpact": true,
+				"ImpactSoundEvent": "Play_Plant_BowlingBulb_Impact",
+				"CollisionRect": {
+					"mX": -15.000000,
+					"mY": -5.000000,
+					"mWidth": 20.000000,
+					"mHeight": 10.000000
+				}
+			}
+		},
