@@ -7,6 +7,9 @@
 
 Don't forget to add the way to enter sandbox level such as in worldmap
 
+## Adding plants into sandbox mode
+Just add plant's typename into PlantTyperOrder in PROPERTYSHEETS
+
 Done, now plants in your mod should be loaded automatically in sandbox mode but zombies, You'll need to follow on how to add zombies in sandbox mode
 
 ## How 2 add zombies
@@ -107,6 +110,7 @@ change only aliases, typename, resourcegroups and popanim, DON'T CHANGE FRAMEWOR
 
 ```json
 "PlantTypeOrder": [
+    "newplantcool",
     "dummytutorialbasic",
     "dummytutorialbrick",
     "dummytutorialbucket",
@@ -140,7 +144,7 @@ boom done
 step 3 skipped. you didn't delete the other animation labels. The plant animrig problem.
 
 **"Seed packet doesn't show"**
-`PlantTypeOrder` wasn't updated (step 10).
+`PlantTypeOrder` wasn't updated (step 11).
 
 ---
 
