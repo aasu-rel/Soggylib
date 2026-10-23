@@ -19,6 +19,7 @@ This one is complicated, follow carefully
 2. make a copy of animation folder
 3. delete all animation labels (BESIDE IDLE)
 4. delete all unnecessary sprites (butter and goo)
+- Set their bitmap size to 0, 0 instead
 5. copy whole idle animation more times and rename it to be idle1_1, attack, idle1_2
 6. add new keyframe at the start of attack then press F9 and add this command
 ```AS3
