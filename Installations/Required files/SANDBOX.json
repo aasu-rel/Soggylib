@@ -9,7 +9,6 @@
                 "AddBonusStartingSun": false,
                 "SuppressPlantfoodPurchase": true,
                 "LevelNumber": 666,
-                "DisableSaveGame": true,
                 "ForceToWorldMap": true,
                 "LevelPowerupSet": "LevelPowerupsUnlimited",
                 "NormalPresentTable": "egypt_normal_01",
